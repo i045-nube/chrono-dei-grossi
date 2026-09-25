@@ -1,0 +1,80 @@
+/* Proposta 4 VETRO: vetro smerigliato su luci gialle sfumate */
+.p-vetro {
+  --glass: linear-gradient(145deg, rgba(255,255,255,.14), rgba(255,255,255,.04) 45%, rgba(255,255,255,.07));
+  --glass-edge: inset 0 1px 0 rgba(255,255,255,.35), inset 0 -1px 0 rgba(255,255,255,.06), inset 1px 0 0 rgba(255,255,255,.12), inset -1px 0 0 rgba(255,255,255,.05);
+}
+.p-vetro .bg { background: radial-gradient(120% 80% at 50% 100%, #1a1406, #070707 60%), #070707; }
+.p-vetro .d1, .p-vetro .d2, .p-vetro .d3 { display: block; position: absolute; z-index: 0; border-radius: 50%; pointer-events: none; filter: blur(40px); }
+.p-vetro .d1 { width: 90cqw; height: 90cqw; left: -30cqw; top: 6cqh; background: radial-gradient(circle, #ffd60a, rgba(255,170,0,.4) 50%, transparent 70%); opacity: .55; }
+.p-vetro .d2 { width: 80cqw; height: 80cqw; right: -34cqw; top: 46cqh; background: radial-gradient(circle, #ff9f00, rgba(255,120,0,.3) 50%, transparent 70%); opacity: .45; }
+.p-vetro .d3 { width: 60cqw; height: 60cqw; left: 10cqw; bottom: -24cqw; background: radial-gradient(circle, #fff2a0, transparent 65%); opacity: .25; }
+.p-vetro .fx { background: var(--noise); opacity: .06; mix-blend-mode: overlay; z-index: 1; }
+
+.p-vetro .icon-btn, .p-vetro .mode, .p-vetro .last, .p-vetro .ctl .knob, .p-vetro .phase {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(22px) saturate(170%); backdrop-filter: blur(22px) saturate(170%);
+  box-shadow: var(--glass-edge), 0 18px 40px -12px rgba(0,0,0,.6);
+}
+.p-vetro .icon-btn { color: #fff; }
+
+.p-vetro .logo { filter: drop-shadow(0 16px 30px rgba(0,0,0,.6)); }
+.p-vetro .t1 { color: #fff; text-shadow: 0 0 30px rgba(255,214,10,.35); }
+.p-vetro .t2 {
+  background: linear-gradient(90deg, #fff3a6, #ffd60a 40%, #ffae00);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+.p-vetro .mode { border-radius: 26px; }
+.p-vetro .mode::after { /* riflesso */
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(120% 60% at 0% 0%, rgba(255,255,255,.18), transparent 50%);
+}
+.p-vetro .mode-ico {
+  width: min(24cqi, 5.6cqh); height: min(24cqi, 5.6cqh); top: 8cqi; right: auto; left: 9cqi; padding: 5cqi; border-radius: 50%;
+  color: #111; background: radial-gradient(circle at 35% 30%, #fff6b8, #ffd60a 55%, #f0a000);
+  box-shadow: 0 0 22px rgba(255,200,0,.55), inset 0 -2px 4px rgba(0,0,0,.2), inset 0 2px 2px rgba(255,255,255,.6);
+}
+.p-vetro .mode-name { color: #fff; }
+.p-vetro .mode-sub { color: #fff; opacity: .62; }
+
+.p-vetro .last { border-radius: 22px; }
+.p-vetro .last-k { color: #ffd60a; opacity: 1; }
+.p-vetro .last > svg { color: #ffd60a; }
+.p-vetro .foot a { color: rgba(255,255,255,.55); }
+
+/* timer */
+.p-vetro .run-mode { color: #fff; }
+.p-vetro .phase { color: #111; border-radius: 999px; background: linear-gradient(135deg, #fff3a6, #ffd60a 45%, #ffae00); box-shadow: 0 0 30px rgba(255,190,0,.45), inset 0 1px 0 rgba(255,255,255,.7); }
+.p-vetro .round { color: rgba(255,255,255,.65); }
+.p-vetro .round b { color: #fff; }
+
+.p-vetro .ring { width: min(94cqw, 94cqh); }
+.p-vetro .ring::before { /* disco di vetro */
+  content: ""; position: absolute; inset: 11%; border-radius: 50%;
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(20px) saturate(160%); backdrop-filter: blur(20px) saturate(160%);
+  box-shadow: var(--glass-edge), 0 30px 60px -20px rgba(0,0,0,.7);
+}
+.p-vetro .d4 { /* alone del progresso */
+  display: block; position: absolute; inset: 2%; border-radius: 50%; z-index: -1;
+  background: conic-gradient(from 0deg, #ffd60a 0 70%, transparent 70%);
+  -webkit-mask: radial-gradient(circle, transparent 60%, #000 62% 70%, transparent 72%); mask: radial-gradient(circle, transparent 60%, #000 62% 70%, transparent 72%);
+  filter: blur(14px); opacity: .8;
+}
+.p-vetro .ticks { display: none; }
+.p-vetro .ring .track { stroke: rgba(255,255,255,.08); stroke-width: 7; }
+.p-vetro .ring .prog { stroke: url(#gy); stroke-width: 7; filter: drop-shadow(0 0 6px rgba(255,200,0,.9)); }
+.p-vetro .digits { font-size: 23cqw; color: #fff; text-shadow: 0 0 24px rgba(255,214,10,.35); }
+.p-vetro .clock-sub { color: rgba(255,255,255,.7); bottom: 23%; font-size: max(10px, 3.5cqw); }
+.p-vetro .clock-sub b { color: #ffd60a; }
+
+.p-vetro .segments i { border-radius: 99px; background: rgba(255,255,255,.1); }
+.p-vetro .segments i.done { background: rgba(255,214,10,.45); }
+.p-vetro .segments i.on { background: #ffd60a; box-shadow: 0 0 14px rgba(255,200,0,.8); }
+
+.p-vetro .ctl .knob { color: #fff; }
+.p-vetro .ctl-main .knob {
+  color: #111; background: radial-gradient(circle at 40% 30%, #fff6b8, #ffd60a 50%, #f0a000);
+  box-shadow: 0 0 0 8px rgba(255,214,10,.14), 0 0 50px rgba(255,190,0,.55), inset 0 -4px 10px rgba(0,0,0,.18), inset 0 3px 3px rgba(255,255,255,.7);
+}
+.p-vetro .ctl span { color: #fff; }
