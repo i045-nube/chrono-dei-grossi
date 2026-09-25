@@ -24,7 +24,7 @@
 .p-arena .home .d2 { top: 25cqh; font-size: 30cqw; left: -2cqw; }
 .p-arena .home .d2::before { content: "GROSSI"; }
 .p-arena .run .d2 { top: 25cqh; font-size: 40cqw; }
-.p-arena .run .d2::before { content: "LAVORO"; }
+.p-arena .run .d2::before { content: "EMOM"; }
 /* linee di velocità */
 .p-arena .d3 {
   display: block; position: absolute; z-index: 0; inset: 0; pointer-events: none;

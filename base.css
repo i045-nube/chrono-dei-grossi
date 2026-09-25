@@ -122,7 +122,6 @@ svg { display: block; }
 .mode-ico svg { width: 100%; height: 100%; }
 .mode-name { font: 400 min(16cqi, 4.1cqh)/1 "Factoria", serif; letter-spacing: .02em; white-space: nowrap; }
 .mode-sub { font: 600 max(11px, min(6.8cqi, 1.6cqh))/1.2 var(--sans); margin-top: .7cqh; opacity: .7; letter-spacing: .02em; }
-.m-crono .mode-name { font-size: min(10.4cqi, 3.2cqh); }
 .mode-idx, .mode-go { display: none; }
 
 .last { flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 3cqw; margin-top: min(3.4cqw, 1.6cqh); min-height: max(54px, 8.2cqh); padding: 0 min(4.4cqw, 2.2cqh); }
